@@ -20,15 +20,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"brucechaoc.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="@charset &quot;utf-8&quot;;  &#x2F;* CSS Document *&#x2F; @media screen { body {     margin: 0;     padding: 0;     background-color: #bebebe;     font: 12pt &quot;Tahoma&quot;; } * {     box-sizing: border-box;     -moz-box-s">
+<meta name="description" content="从字符串和文件解析lxml.etree支持以多种方式和从所有重要的来源解析XML，即字符串、文件、URL（http&#x2F;ftp）和类文件对象。主要的解析函数是fromstring()和parse()，这两个函数都是以源为第一参数调用的。默认情况下，它们使用标准的解析器，但你可以随时传递一个不同的解析器作为第二个参数。 fromstring()函数fromstring()函数是解析字符串的最简单方法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2021&#x2F;10&#x2F;03">
+<meta property="og:title" content="lxml内容学习">
 <meta property="og:url" content="https://brucechaoc.github.io/2021/10/03/2021-10-03/index.html">
 <meta property="og:site_name" content="基质君Blog">
-<meta property="og:description" content="@charset &quot;utf-8&quot;;  &#x2F;* CSS Document *&#x2F; @media screen { body {     margin: 0;     padding: 0;     background-color: #bebebe;     font: 12pt &quot;Tahoma&quot;; } * {     box-sizing: border-box;     -moz-box-s">
+<meta property="og:description" content="从字符串和文件解析lxml.etree支持以多种方式和从所有重要的来源解析XML，即字符串、文件、URL（http&#x2F;ftp）和类文件对象。主要的解析函数是fromstring()和parse()，这两个函数都是以源为第一参数调用的。默认情况下，它们使用标准的解析器，但你可以随时传递一个不同的解析器作为第二个参数。 fromstring()函数fromstring()函数是解析字符串的最简单方法。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-03T14:05:48.000Z">
-<meta property="article:modified_time" content="2021-10-03T15:22:58.318Z">
+<meta property="article:modified_time" content="2021-10-10T11:20:24.659Z">
 <meta property="article:author" content="基质君">
 <meta property="article:tag" content="Journal; Summary;">
 <meta name="twitter:card" content="summary">
@@ -38,10 +38,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://brucechaoc.github.io/2021/10/03/2021-10-03/","path":"2021/10/03/2021-10-03/","title":"2021/10/03"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://brucechaoc.github.io/2021/10/03/2021-10-03/","path":"2021/10/03/2021-10-03/","title":"lxml内容学习"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>2021/10/03 | 基质君Blog</title>
+<title>lxml内容学习 | 基质君Blog</title>
   
 
 
@@ -108,7 +108,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">lxml内容学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">1.1.</span> <span class="nav-text">从字符串和文件解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text">fromstring()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.2.</span> <span class="nav-text">parse()函数</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%96%87%E4%BB%B6%E8%A7%A3%E6%9E%90"><span class="nav-number">1.</span> <span class="nav-text">从字符串和文件解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fromstring-%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.</span> <span class="nav-text">fromstring()函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#parse-%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.</span> <span class="nav-text">parse()函数</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -121,7 +121,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -174,7 +174,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          2021/10/03
+          lxml内容学习
         </h1>
 
         <div class="post-meta-container">
@@ -184,10 +184,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-10-03 22:05:48 / Modified: 23:22:58" itemprop="dateCreated datePublished" datetime="2021-10-03T22:05:48+08:00">2021-10-03</time>
+      <time title="Created: 2021-10-03 22:05:48" itemprop="dateCreated datePublished" datetime="2021-10-03T22:05:48+08:00">2021-10-03</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-10-10 19:20:24" itemprop="dateModified" datetime="2021-10-10T19:20:24+08:00">2021-10-10</time>
+      </span>
 
   
 </div>
@@ -199,70 +205,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <!DOCTYPE html>
-<html>
-<head>
-<style>
-@charset "utf-8";
+        <h2 id="从字符串和文件解析"><a href="#从字符串和文件解析" class="headerlink" title="从字符串和文件解析"></a>从字符串和文件解析</h2><p>lxml.etree支持以多种方式和从所有重要的来源解析XML，即字符串、文件、URL（http/ftp）和类文件对象。主要的解析函数是fromstring()和parse()，这两个函数都是以源为第一参数调用的。默认情况下，它们使用标准的解析器，但你可以随时传递一个不同的解析器作为第二个参数。</p>
+<h3 id="fromstring-函数"><a href="#fromstring-函数" class="headerlink" title="fromstring()函数"></a>fromstring()函数</h3><p>fromstring()函数是解析字符串的最简单方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>some_xml_data = <span class="string">&quot;&lt;root&gt;data&lt;/root&gt;&quot;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>root = etree.fromstring(some_xml_data)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(root.tag)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>root</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>etree.tostring(root)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">b&#x27;&lt;root&gt;data&lt;/root&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
 
-/* CSS Document */
-@media screen {
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #bebebe;
-    font: 12pt "Tahoma";
-}
-* {
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-}
-.page {
-    padding-top: 0cm;
-    padding-right: 0.5cm;
-    padding-left: 0.5cm;
-    padding-bottom: 0cm;
-    border: 5px #ffffff solid;
-    border-radius: 5px;
-    background: rgb(255, 255, 255);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-.text {
-    color: #000000;
-    font-family: "宋体";
-    text-indent: 2em;
-}
-.h2 {
-    color: #000000;
-    font-family: "黑体";
-}
-.h2 {
-    color: #000000;
-    font-family: "楷体";
-}
-.code {
-}
-}
-</style>
-<title> pyhthon.os </title>
-</head>
-<body>
-<div class="page">
-    <h1 class="h1">lxml内容学习</h1>
-    <h2 class="h2">从字符串和文件解析</h2>
-    <p class="text">lxml.etree支持以多种方式和从所有重要的来源解析XML，即字符串、文件、URL（http/ftp）和类文件对象。主要的解析函数是fromstring()和parse()，这两个函数都是以源为第一参数调用的。默认情况下，它们使用标准的解析器，但你可以随时传递一个不同的解析器作为第二个参数。</p>
-    <h3 class="h3">fromstring()函数</h3>
-    <p class="text">fromstring()函数是解析字符串的最简单方法。</p>
-    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>some_xml_data = <span class="string">&quot;&lt;root&gt;data&lt;/root&gt;&quot;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>root = etree.fromstring(some_xml_data)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(root.tag)</span><br><span class="line">root</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>etree.tostring(root)</span><br><span class="line"><span class="string">b&#x27;&lt;root&gt;data&lt;/root&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
-    <p class="text">还有一个相应的函数HTML()，用于HTML字头。</p>
-    <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>root = etree.HTML(<span class="string">&quot;&lt;p&gt;data&lt;/p&gt;&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>etree.tostring(root)</span><br><span class="line"><span class="string">b&#x27;&lt;html&gt;&lt;body&gt;&lt;p&gt;data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&#x27;</span></span><br></pre></td></tr></table></figure>
-    <h3 class="h3">parse()函数</h3>
-    <p class="text">parse()函数用于从文件和类文件对象中进行解析。</p>
-    <p class="text">作为这样一个类文件对象的例子，下面的代码使用 BytesIO 类来读取一个字符串，而不是一个外部文件。该类来自 Python 2.6 及以后版本的 io 模块。在旧的 Python 版本中，你必须使用来自 StringIO 模块的 StringIO 类。然而，在现实生活中，你显然会完全避免这样做，而使用上面的字符串解析函数。</p>
+<p>还有一个相应的函数HTML()，用于HTML字头。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>root = etree.HTML(<span class="string">&quot;&lt;p&gt;data&lt;/p&gt;&quot;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>etree.tostring(root)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">b&#x27;&lt;html&gt;&lt;body&gt;&lt;p&gt;data&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&#x27;</span>  </span><br></pre></td></tr></table></figure>
 
-</div>
-</body>
-</html>
+<h3 id="parse-函数"><a href="#parse-函数" class="headerlink" title="parse()函数"></a>parse()函数</h3><p>parse()函数用于从文件和类文件对象中进行解析。</p>
+<p>作为这样一个类文件对象的例子，下面的代码使用 BytesIO 类来读取一个字符串，而不是一个外部文件。该类来自 Python 2.6 及以后版本的 io 模块。在旧的 Python 版本中，你必须使用来自 StringIO 模块的 StringIO 类。然而，在现实生活中，你显然会完全避免这样做，而使用上面的字符串解析函数。</p>
+
     </div>
 
     
@@ -273,6 +225,15 @@ body {
 
         
 
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/10/10/2021-10-10/" rel="next" title="vision transformer底层代码详解">
+                  vision transformer底层代码详解 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
